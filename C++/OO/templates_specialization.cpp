@@ -1,3 +1,4 @@
+//http://www.geeksforgeeks.org/template-specialization-c/
 #include <iostream>
 using namespace std;
  
@@ -16,6 +17,6 @@ void fun(int a)
 int main()
 {
     fun<char>('a');
-    fun<int>(10);
+    fun<int>(10);//call fun(int)
     fun<float>(10.14);
 }
