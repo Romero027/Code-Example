@@ -24,7 +24,7 @@ int *Add_(int *a, int *b){
 int main(){//Calling function
 	int a=2, b=4;
 	int *ptr1 = Add(&a,&b);//a and b are integers local to main
-	PrintHelloWorld();
+	//PrintHelloWorld();
 	printf("Sum = %d\n",*ptr1);//This will not print 6 but some garbage value
 	int* ptr2 = Add_(&a,&b);
 	PrintHelloWorld();
