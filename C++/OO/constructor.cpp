@@ -12,8 +12,8 @@ public:
         // Default Constructor
     construct()
     {
-        a = 10;
-        b = 20;
+       //  a = 10;
+//         b = 20;
     }
 };
  
@@ -22,6 +22,6 @@ int main()
         // Default constructor called automatically
         // when the object is created
     construct c;
-    cout << "a: "<< c.a << endl << "b: "<< c.b;
+    cout << "a: "<< c.a << endl << "b: "<< c.b <<endl;
     return 1;
 }
