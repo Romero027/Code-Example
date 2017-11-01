@@ -12,6 +12,6 @@ struct Record
 int main()
 {
     struct Record s;
-    printf("%d\n",sizeof(s));
+    printf("%d\n",sizeof(s));//This will print 1 in C++, 0 in C
     return 0;
 }
