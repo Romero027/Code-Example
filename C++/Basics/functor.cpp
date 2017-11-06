@@ -1,11 +1,16 @@
+//A functor is pretty much just a class which defines the operator(). 
+//That lets you create objects which "look like" a function:
 #include<iostream>
+#include<vector>
 using namespace std;
+
+//this is a functor
 struct add_x {
-  add_x(int x) : x(x) {}
-  int operator()(int y) const { return x + y; }
+  	add_x(int x) : x(x) {}
+  	int operator()(int y) const { return x + y; }
 
 private:
-  int x;
+  	int x;
 };
 
 int main(){
@@ -25,7 +30,7 @@ int main(){
   	transform (foo.begin(), foo.end(), bar.begin(), add_x(1));
 
 
-     for (std::vector<int>::iterator it=bar.begin(); it!=bar.end(); ++it)
+    for (std::vector<int>::iterator it=bar.begin(); it!=bar.end(); ++it)
     	std::cout << ' ' << *it;
   		std::cout << '\n';                         	                    
 
