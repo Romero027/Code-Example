@@ -1,5 +1,7 @@
 //A functor is pretty much just a class which defines the operator(). 
 //That lets you create objects which "look like" a function:
+//for more information about transfor:http://www.cplusplus.com/reference/algorithm/for_each/
+//Source:https://stackoverflow.com/questions/356950/c-functors-and-their-uses
 #include<iostream>
 #include<vector>
 using namespace std;
