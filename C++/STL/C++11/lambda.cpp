@@ -1,4 +1,4 @@
-//A program show how lambda expression can be used 
+//A program 
 #include <algorithm>
 #include <vector>
 #include <iostream>
