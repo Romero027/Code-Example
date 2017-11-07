@@ -40,7 +40,7 @@ int main ()
       std::priority_queue<my_pair_t,
                         my_container_t,
                         myComparator> pq;
- 
+ 	int i;
     // Insert points into the min heap
     pq.push(std::make_pair(5, 0.1));
     pq.push(std::make_pair(0, 0.3));
