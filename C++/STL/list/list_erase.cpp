@@ -11,16 +11,27 @@ int main() {
 
 	list<int> numbers;
 	// set some values:
-  	for (int i=1; i<10; ++i) mylist.push_back(i*10);
-	//you can use it++/it-- but not it+=2
+  	for (int i=1; i<10; ++i) numbers.push_back(i*10);
 	
-	for(list<int>::iterator it=numbers.begin(); it != numbers.end(); it++) {
-		//We have to set it = numbers.erase(it), because erase will invalidate the iterator
-		//cout << *it << endl;
-		if(*it == 1){
+	
+	for(list<int>::iterator it=numbers.begin(); it != numbers.end();) {
+		//cout<<*it<<endl;
+		if(*it == 20){
+			//because this will increment the iterator, so we do not what to 
+			//increment it again
 			it = numbers.erase(it);
+		}else{
+			//it++;
+		}
+		if(*it == 20){
+			//because this will increment the iterator, so we do not what to 
+			//increment it again
+			it = numbers.erase(it);
+		}else{
+			//it++;
 		}
 	}
+	cout<<"------------"<<endl;
 	for(list<int>::iterator it=numbers.begin(); it != numbers.end(); it++) {
 		cout << *it << endl;
 	}
