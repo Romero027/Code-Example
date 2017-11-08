@@ -16,34 +16,32 @@ int main() {
 	numbers.push_back(1);
 	numbers.push_back(2);
 	numbers.push_back(3);
-	//numbers.push_front(0);
 
-	// list<int>::iterator it = numbers.begin();
-	// it++;
-	// //inserting new elements before the element at the specified position
-	// numbers.insert(it, 100);
-	// cout << "Element: " << *it << endl;
+	numbers.push_front(0);
 
-	// list<int>::iterator eraseIt = numbers.begin();
-	// eraseIt++;
-	// //if we just use numbers.erase(eraseIt), this will invalidate the iterator 
-	// //erase returns: An iterator pointing to the element that followed the last element 
-	// //erased by the function call.(next element)
-	// eraseIt = numbers.erase(eraseIt);
-	// cout << "Element: " << *eraseIt << endl;
+	list<int>::iterator it = numbers.begin();
+	it++;
+	//inserting new elements before the element at the specified position
+	numbers.insert(it, 100);
+	cout << "Element: " << *it << endl;
 
-	// //you can use it++/it-- but not it+=2
-	// for(list<int>::iterator it=numbers.begin(); it != numbers.end(); it++) {
-	// 	cout << *it << endl;
-	// }
+	list<int>::iterator eraseIt = numbers.begin();
+	eraseIt++;
+	//if we just use numbers.erase(eraseIt), this will invalidate the iterator 
+	//erase returns: An iterator pointing to the element that followed the last element 
+	//erased by the function call.(next element)
+	eraseIt = numbers.erase(eraseIt);
+	cout << "Element: " << *eraseIt << endl;
 
+	//you can use it++/it-- but not it+=2
 	for(list<int>::iterator it=numbers.begin(); it != numbers.end(); it++) {
 		//We have to set it = numbers.erase(it), because erase will invalidate the iterator
 		if(*it == 1){
 			it = numbers.erase(it);
 		}
+	
+	for(list<int>::iterator it=numbers.begin(); it != numbers.end(); it++) {
 		cout << *it << endl;
-
 	}
 
 
