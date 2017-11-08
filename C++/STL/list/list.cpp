@@ -27,7 +27,8 @@ int main() {
 	list<int>::iterator eraseIt = numbers.begin();
 	eraseIt++;
 	eraseIt = numbers.erase(eraseIt);
-	cout << "Element: " << *eraseIt << endl;
+	//This is not correct, you already earse the element
+	//cout << "Element: " << *eraseIt << endl;
 
 	//you can use it++/it-- but not it+=2
 	for(list<int>::iterator it=numbers.begin(); it != numbers.end(); it++) {
