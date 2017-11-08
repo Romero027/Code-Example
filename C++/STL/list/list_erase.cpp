@@ -13,7 +13,7 @@ int main() {
 	// set some values:
   	for (int i=1; i<10; ++i) numbers.push_back(i*10);
   	cout<<"Case1(CORRECT)"<<endl;
-	cout<<"Original list"<<endl;
+	cout<<"Original list:"<<endl;
 	for(list<int>::iterator it=numbers.begin(); it != numbers.end(); it++) {
 		cout << *it << endl;
 	}
@@ -32,7 +32,7 @@ int main() {
 		
 	}
 	
-	cout<<"After remove 20 and 30"<<endl;
+	cout<<"After remove 20 and 30:(20 and 30 is gone)"<<endl;
 	for(list<int>::iterator it=numbers.begin(); it != numbers.end(); it++) {
 		cout << *it << endl;
 	}
@@ -42,7 +42,7 @@ int main() {
 	//ERROR!!!!!
 	numbers.clear();//clear the list first
 	for (int i=1; i<10; ++i) numbers.push_back(i*10);
-	cout<<"Original list"<<endl;
+	cout<<"Original list:"<<endl;
 	for(list<int>::iterator it=numbers.begin(); it != numbers.end(); it++) {
 		cout << *it << endl;
 	}
@@ -56,7 +56,7 @@ int main() {
 		}
 		
 	}
-	cout<<"After remove 20 and 30"<<endl;
+	cout<<"After remove 20 and 30:(30 is still there)"<<endl;
 	for(list<int>::iterator it=numbers.begin(); it != numbers.end(); it++) {
 		cout << *it << endl;
 	}
