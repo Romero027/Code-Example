@@ -31,6 +31,7 @@ int main() {
 	}
 
 	for(map<string, int>::iterator it = ages.begin(); it != ages.end(); it++) {
+		//deference the iterator, you will get a pair 
 		pair<string, int> age = *it;
 
 		cout << age.first << ": " << age.second << endl;
