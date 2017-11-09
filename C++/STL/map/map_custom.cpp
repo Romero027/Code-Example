@@ -10,7 +10,7 @@ private:
 	int age;
 
 public:
-
+	//You have to have default constructor(see main function)
 	Person() :
 			name(""), age(0) {
 
@@ -21,8 +21,10 @@ public:
 
 	}
 
+	//copy constructor
 	Person(const Person& other){
 		cout << "Copy constructor running!" << endl;
+		cout<<"Name is "<<other.name<<endl;
 		name = other.name;
 		age = other.age;
 	}
@@ -34,10 +36,13 @@ public:
 
 int main() {
 	map<int, Person> people;
-
+	//this will intialize a person using default constructor 
+	//and use assignment operator.(default assignmemnt operator(shallow copy))
+	//We might want to overload assignment operator
 	people[50] = Person("Mike", 40);
 	people[32] = Person("Vicky", 30);
 	people[1] = Person("Raj", 20);
+
 
 	people.insert(make_pair(55, Person("Bob", 45 )));
 	people.insert(make_pair(55, Person("Sue", 24 )));
