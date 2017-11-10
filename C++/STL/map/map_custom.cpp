@@ -6,13 +6,13 @@ using namespace std;
 
 class Person {
 private:
-	string name;
+	//You have to have default constructor(see main function)
+	Person() :
+		string name;
 	int age;
 
 public:
-	//You have to have default constructor(see main function)
-	Person() :
-			name(""), age(0) {
+		name(""), age(0) {
 
 	}
 

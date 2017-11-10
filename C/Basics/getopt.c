@@ -14,7 +14,7 @@ main (int argc, char **argv)
 
   //opterr = 0;
 
-  while ((c = getopt (argc, argv, "abc:")) != -1)
+  while ((c = getopt (argc, argv, "ab")) != -1)
     switch (c)
       {
       case 'a':
@@ -23,6 +23,8 @@ main (int argc, char **argv)
       case 'b':
         printf("You entered b");
         break;
+      case '?':
+      	return 1;
       default:
         printf("This is not!!");
         return 1;
