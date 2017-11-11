@@ -18,6 +18,10 @@ int main(int argc, char *argv[]){
 		exit(1);
 	}
 
+
+	/* write */
+	write(fd,"Hello World!\n",11);
+
 	close(fd);
 
 
