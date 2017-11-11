@@ -7,7 +7,7 @@ int main(){
 
 	int ret;
 
-	/* create a directory */*
+	/* create a directory */
 	
 	//The first argument is the name of path and the second arguemnt is the mode(See man 2 mkdir)
 	//ret = mkdir("Mynewdir",
