@@ -6,8 +6,9 @@ using namespace std;
 
 class Test{
 private:
-	string name 
 	int id;
+	string name;
+
 public:
 	//Default Constructor(Good Practice to define this)
 	Test(): id(0),name(""){
@@ -30,16 +31,30 @@ public:
 	bool operator<(const Test &other) const{
 		return name < other.name;
 	}
-}
+};
+
+
 int main(){
 	set<int> numbers;
 
 	numbers.insert(50);
 	numbers.insert(30);
 	numbers.insert(10);
+	//The element in set is unique, so insert 30 again has no effect
+	numbers.insert(30);
+	
 
 	for(auto i : numbers){
 		cout<<i<<endl;
+	}
+
+
+	//find a specific value
+	//find returns an iterator to the element, if val is found, or set::end otherwise.
+	set<int>::iterator itFind = numbers.find(50);
+
+	if(itFind!=numbers.end()){
+		cout<<"Found: "<<*itFind<<endl;
 	}
 	return 0;
 }
