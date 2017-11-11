@@ -56,5 +56,18 @@ int main(){
 	if(itFind!=numbers.end()){
 		cout<<"Found: "<<*itFind<<endl;
 	}
+
+	set<Test> tests;
+
+	tests.insert(Test(10,"Mike"));
+	tests.insert(Test(20,"Bill"))
+	tests.insert(Test(13,"Steven"))
+	tests.insert(Test(12,"Alan"))
+
+	for(auto i : tests){
+		i->print();
+	}
+
+
 	return 0;
 }
