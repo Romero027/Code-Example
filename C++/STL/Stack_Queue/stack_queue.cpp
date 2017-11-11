@@ -14,15 +14,10 @@ public:
 	{
 		
 	}
- 	Test(const Test &t)
-   	{
-      cout<<"Copy constructor called "<<endl;
-   	}
-
 
 	~Test()
 	{
-		
+		//cout<<"Called destructor!"<<endl;
 	}
 
 	void print() const
@@ -39,7 +34,7 @@ int main(int argc, char const *argv[])
 	testStack.push(Test("John"));
 	testStack.push(Test("Sue"));
 
-	cout << endl;
+	
 	//top() returns a reference to the top element in the stack. 
 	//if we use Test test1 = testStack.top(), we will call the as
 	Test &test1 = testStack.top();
@@ -49,23 +44,32 @@ int main(int argc, char const *argv[])
 	Test &test2 = testStack.top();
 	test2.print();
 
-	// //FIFO
-	// queue<Test> testQueue;
-
-	// testQueue.push(Test("Mike"));
-	// testQueue.push(Test("John"));
-	// testQueue.push(Test("Sue"));
+	/*
+	 * This is invalid code! Object is destoryed
+	Test &test1 = testStack.top();
+	testStack.pop();
+	test1.print();//Reference refers to destoryed objects
 	
-	// cout << endl;
+	*/
 
-	// testQueue.back().print();
 
-	// while(testQueue.size() > 0)
-	// {
-	// 	Test &test = testQueue.front();
-	// 	test.print();
-	// 	testQueue.pop();
-	// }
+	//FIFO
+	queue<Test> testQueue;
+
+	testQueue.push(Test("Mike"));
+	testQueue.push(Test("John"));
+	testQueue.push(Test("Sue"));
+	
+	cout << endl;
+
+	testQueue.back().print();
+
+	while(testQueue.size() > 0)
+	{
+		Test &test = testQueue.front();
+		test.print();
+		testQueue.pop();
+	}
 
 	return 0;
 }
