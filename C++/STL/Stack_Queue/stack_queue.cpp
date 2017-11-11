@@ -14,7 +14,14 @@ public:
 	{
 		
 	}
-
+ 	Test(const Test &t)
+   	{
+      cout<<"Copy constructor called "<<endl;
+   	}
+   Test& operator = (const Test &t)
+   {
+      cout<<"Assignment operator called "<<endl;
+   }
 	~Test()
 	{
 		
@@ -35,7 +42,8 @@ int main(int argc, char const *argv[])
 	testStack.push(Test("Sue"));
 
 	cout << endl;
-
+	//top() returns a reference to the top element in the stack. 
+	//if we use Test test1 = testStack.top(), we will call the as
 	Test &test1 = testStack.top();
 	test1.print();
 
@@ -43,23 +51,23 @@ int main(int argc, char const *argv[])
 	Test &test2 = testStack.top();
 	test2.print();
 
-	//FIFO
-	queue<Test> testQueue;
+	// //FIFO
+	// queue<Test> testQueue;
 
-	testQueue.push(Test("Mike"));
-	testQueue.push(Test("John"));
-	testQueue.push(Test("Sue"));
+	// testQueue.push(Test("Mike"));
+	// testQueue.push(Test("John"));
+	// testQueue.push(Test("Sue"));
 	
-	cout << endl;
+	// cout << endl;
 
-	testQueue.back().print();
+	// testQueue.back().print();
 
-	while(testQueue.size() > 0)
-	{
-		Test &test = testQueue.front();
-		test.print();
-		testQueue.pop();
-	}
+	// while(testQueue.size() > 0)
+	// {
+	// 	Test &test = testQueue.front();
+	// 	test.print();
+	// 	testQueue.pop();
+	// }
 
 	return 0;
 }
