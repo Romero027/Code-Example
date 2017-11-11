@@ -1,25 +1,15 @@
+//A program show that how to create and remove a directory
 #include<stdio.h>
-#include<unistd.h>
+#include<sys/stat.h>
+
 
 int main(){
-	
-	char buf[10];
+
 	int ret;
 
-	while(1){
-		//0 is the stdin 
-		ret = read(0,buf,10);
-		if(ret < 10){
-			//We need to put a null character at the end of the string
-			buf[ret]='\0';
-			printf("You entered: %d of bytes and the string is %s\n",ret, buf);
-			break;
-		}else{
-			printf("You entered: %d of bytes and the string is %s\n",ret, buf);
-		}
-	}
-	
-	
+
+	//The first argument is the name of path and the second arguemnt is the mode(See man 2 mkdir)
+	ret = mkdir("Mynewdir",0000777);
 
 	return 0;
 }
