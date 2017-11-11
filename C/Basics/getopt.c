@@ -18,17 +18,20 @@ main (int argc, char **argv)
     switch (c)
       {
       case 'a':
-        printf("You entered a");
+        printf("You entered a\n");
         break;
       case 'b':
-        printf("You entered b");
+        printf("You entered b\n");
         break;
       case '?':
+         printf("Wrong option\n");
       	return 1;
       default:
-        printf("This is not!!");
+        printf("Wrong option\n");
         return 1;
       }
+      //getopt will be 0 if the user doesn't supply an option
+      printf("optopt is : %d\n",optopt);
 // 
 //   printf ("aflag = %d, bflag = %d, cvalue = %s\n",
 //           aflag, bflag, cvalue);
