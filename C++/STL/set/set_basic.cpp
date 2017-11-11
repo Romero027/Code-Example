@@ -60,12 +60,16 @@ int main(){
 	set<Test> tests;
 
 	tests.insert(Test(10,"Mike"));
-	tests.insert(Test(20,"Bill"))
-	tests.insert(Test(13,"Steven"))
-	tests.insert(Test(12,"Alan"))
+	tests.insert(Test(20,"Bill"));
+	tests.insert(Test(13,"Steven"));
+	tests.insert(Test(12,"Alan"));
 
+	//No effect, Alan will still have id 12
+	tests.insert(Test(11,"Alan"));
+
+	
 	for(auto i : tests){
-		i->print();
+		i.print();
 	}
 
 
