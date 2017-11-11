@@ -6,10 +6,7 @@
 int
 main (int argc, char **argv)
 {
- //  int aflag = 0;
-//   int bflag = 0;
-//   char *cvalue = NULL;
-//   int index;
+  index;
   int c;
 
   //opterr = 0;
