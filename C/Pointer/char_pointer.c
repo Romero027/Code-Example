@@ -2,9 +2,9 @@
 #include<string.h>
 
 int main(){
-	char str[24] = "First String";
-	printf()
-
-	str[2] = 'j';
+	char *str = "First String";
+	printf("%s\n",str);
+	str++;
+	//*str = 'j';//read-only 
 	return 0;
 }
