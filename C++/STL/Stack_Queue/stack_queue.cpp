@@ -18,10 +18,8 @@ public:
    	{
       cout<<"Copy constructor called "<<endl;
    	}
-   Test& operator = (const Test &t)
-   {
-      cout<<"Assignment operator called "<<endl;
-   }
+
+
 	~Test()
 	{
 		
