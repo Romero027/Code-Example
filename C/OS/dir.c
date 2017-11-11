@@ -23,7 +23,6 @@ int main(){
 	//It returns NULL upon reaching the
     //end of the directory or on error. 
 	while( (dp = readdir(dir)) != NULL ){
-
 		//NOTE: The first one(".") is the current directory and the second one("..") is the parent directory
 		printf(">> %s\n", dp->d_name);
 	}
