@@ -1,4 +1,4 @@
-//A program show that how to use link/syslink and unlink
+//A program show that how to use syslink and unlink
 #include<stdio.h>
 #include<sys/stat.h>
 #include<unistd.h>
