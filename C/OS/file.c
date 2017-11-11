@@ -1,36 +1,60 @@
-//A program to show how to open a directory/read the files
-
 #include<stdio.h>
+#include<fcntl.h>
+#include<unistd.h>
 #include<stdlib.h>
 #include<sys/types.h>
-#include<dirent.h>
+#include<sys/types.h>
+#include<sys/stat.h>
+#include<sys/uio.h>
 
 #pragma GCC diagnostic ignored "-Wunused-parameter"
 
 
 int main(int argc, char *argv[]){
 
-	DIR *dir;	
-	//For more information about this struct: See https://linux.die.net/man/3/readdir
-	struct dirent *dp;
-	//open current directory
-	dir = opendir(".");
-	//The pointer NULL is returned if filename cannot be accessed, or if it cannot malloc(3) enough memory to hold the
-    //whole thing, and sets the global variable errno to indicate the error.
-	if(dir==NULL){
-		printf("Error! unable to open directory.\n");
+	int fd;
+	char buf[14];
+	char str[13] = "Hello World!\n";
+	/* open */
+	//use | operator to allow multiple options(See man 2 open for more detail)
+	//last argument sets the file permission(See man 2 chmod)
+	fd = open("test.txt", O_CREAT|O_WRONLY|O_APPEND, S_IRUSR|S_IWUSR);
+
+	if(fd == -1){
+		printf("Failed to create and open the file\n");
 		exit(1);
 	}
 
 
+	/* write */
+	//write(int fildes, const void *buf, size_t nbyte);
+	//write() attempts to write nbyte of data to the object referenced by the descriptor fildes from the
+    //buffer pointed to by buf.(See man 2 write)
+	write(fd,str,13);
 
-	while( (dp = readdir(dir)) != NULL ){
-		printf(">> %s\n", sd->d_name)
+
+	close(fd);
+
+	/* open */
+	fd = open("test.txt", O_RDONLY);
+
+
+	if(fd == -1){
+		printf("Failed to open and read the file\n");
+		exit(1);
 	}
 
-	closedir(dir);
 
+	/* read */
+	//read(int fildes, void *buf, size_t nbyte);
+	//read() attempts to read nbyte bytes of data from the object referenced by the descriptor fildes into the
+    //buffer pointed to by buf.
+	read(fd,buf,13);
+	buf[13] = '\0';
 
+	close(fd);
+
+	printf("buf: %s\n",buf);
 
 	return 0;
 }
