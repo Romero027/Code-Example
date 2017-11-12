@@ -5,9 +5,20 @@
 #include<sys/uio.h>
 #include<unistd.h>
 #include<stdio.h>
-int getchar_(){
-	char c;
-	return (read(0, &c, 1) == 1) ? (unsigned char) c : EOF;
+
+
+
+//error handling
+void die(const char *s) {
+	//clear the screen at exit
+	write(STDOUT_FILENO, "\x1b[2J", 4);
+ 	write(STDOUT_FILENO, "\x1b[H", 3);
+	//prints a descriptive error message to stderr.
+  	perror(s);
+  	//After printing out the error message, we exit the program with an exit status of 1, 
+  	//which indicates failure (as would any non-zero value).
+
+  	exit(1);
 }
 
 int main(){
