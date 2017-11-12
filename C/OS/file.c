@@ -48,6 +48,10 @@ int main(int argc, char *argv[]){
 	int n_write = write(fd,str,strlen(str));
 	printf("You write %d bytes in to text.txt\n",n_write);
 
+
+	//close breaks the connection between a file descriptor and an open files,
+	//and frees the file descriptor for use with some other files
+	//NOTE:There is a limit (other about 20) on the number of files that a program may have open at same time
 	close(fd);
 
 	/* open */
