@@ -5,26 +5,36 @@
 #include<sys/uio.h>
 #include<unistd.h>
 #include<stdio.h>
-
+#include<stdlib.h>
 
 
 //error handling
 void die(const char *s) {
-	//clear the screen at exit
-	write(STDOUT_FILENO, "\x1b[2J", 4);
- 	write(STDOUT_FILENO, "\x1b[H", 3);
+	//clear the screen at exit(not useful in this case)
+	//https://viewsourcecode.org/snaptoken/kilo/03.rawInputAndOutput.html
+	//write(0, "\x1b[2J", 4);
+ 	//write(0, "\x1b[H", 3);
 	//prints a descriptive error message to stderr.
-  	perror(s);
+  	//perror(s);
+  	printf("%s\n",s);
   	//After printing out the error message, we exit the program with an exit status of 1, 
   	//which indicates failure (as would any non-zero value).
-
   	exit(1);
 }
 
-int main(){
+/* cp: copy f1 to f2 */
 
-	int x = getchar_();
-	printf("%c\n", x);
+int main(int argc, char *argv[]){
+
+	int f1,f2,n;
+	//The value of BUFSIZ is chosen on each system so as to make stream I/O efficient.(found in stdio.h)
+	//At least 256 
+	char buf[BUFSIZ];
+
+	if(argc!=3)
+		die("Usage: cp from to ");
+
+
 
 	return 0;
 }
