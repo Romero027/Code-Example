@@ -16,6 +16,14 @@ int main(int argc, char *argv[]){
 	char buf[14];
 	char str[13] = "Hello World!\n";
 	/* open */
+	/*Before you read or write a file, you must inform the system of you intent to do so, a process called opening
+	 *the file. The system checks your right to create/duscard content.
+	 
+	 */
+
+
+
+
 	//use | operator to allow multiple options(See man 2 open for more detail)
 	//last argument sets the file permission(See man 2 chmod)
 	fd = open("test.txt", O_CREAT|O_WRONLY|O_APPEND, S_IRUSR|S_IWUSR);
