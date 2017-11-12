@@ -32,7 +32,7 @@ int main(int argc, char *argv[]){
 	char buf[BUFSIZ];
 
 	if(argc!=3)
-		die("Usage: cp from to ");
+		die("Usage: <input file> <output file>\n");
 
 
 
