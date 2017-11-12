@@ -9,7 +9,7 @@ public:
 		strcpy(name,nm);
 	}
  	void print() const;
-
+// protected make them visible only to the derived class
 protected:
 	int student_id;
 	double gpa;
@@ -27,7 +27,8 @@ public:
 	enum support{ta, ra, fellowship, other};
 	//call the base case constructor
 	grad_student(char* nm, int id, double g, year x, support t, char *d, char *th): student(nm,id,g,x),s(t){
-
+		strcpy(dept,d);
+		strcpy(thsis,th);
 	}
 	void print() const;
 
