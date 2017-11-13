@@ -10,8 +10,12 @@ struct Books {
 
 int main(){
 	struct Books book;
-
+	struct Books *book2;
 	book.book_id = 0;
-	printf("%d\n",book.book_id);
+	book2 = &book;
+	//The following two will print the same address
+	printf("%d\n",&book2->book_id);
+	printf("%d\n",&((*book2).book_id));
+
 	return 0;
 }
