@@ -31,6 +31,7 @@ public:
 
 	//We need to return reference here in case we want to do something like a=b=c
 	//a=b is equivalent to a.operator=(b)
+	//https://stackoverflow.com/questions/21778045/c-return-value-reference-const-reference
 	const Test& operator=(const Test &other) {//we want to return const reference
 		cout << "Assignment running" << endl;
 		//Deep copy
