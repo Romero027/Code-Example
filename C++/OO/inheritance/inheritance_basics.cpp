@@ -1,5 +1,6 @@
 #include<iostream>
 
+using namespace std;
 class student{
 
 public:
@@ -8,6 +9,8 @@ public:
 		//array of char is un-assignable
 		strcpy(name,nm);
 	}
+	//if we add virtual keyword, the print method in the main funciton will have different result
+	//virtual void print() const;
  	void print() const;
 // protected make them visible only to the derived class
 protected:
@@ -40,19 +43,32 @@ protected:
 };
 
 
-void student::print(){
+void student::print() const{
 	cout<<name<<", "<< student_id<<", "<<y<<", "<<gpa<<endl;
 }
 
 //overriden method
-void grad_student::print(){
-
+void grad_student::print() const{
+	//student:: is required, otherwise you will get an infinite recursion
+	student::print();
+	cout<<dept<<", "<<s<<endl<<thesis<<endl; // add some stuff
 }
+
+
 int main(){
-	char name[] = "Morris Phol";
+	char name2[] = "Morris Pohl";
+	char name1[] = "Mae Pohl";
 	char dept[] =  "Pharmacy";
 	char thesis[] = "Retail Pharmacies";
-	grad_student gs(name, 200, 3.2, student::grad, grad_student::ta, dept, thesis);
-	student& rs = gs; //alias
+	student s(name1,100,3.4,student::fresh);
+	grad_student gs(name2, 200, 3.2, student::grad, grad_student::ta, dept, thesis);
+	student *ps = &s;
+	ps->print();//student::print
+	grad_student *pgs;
+	ps = pgs = &gs;//ps is student type pointer, pgs is grad_student types pointer
+	//This is the default behavior, if we add virtual keyword(see print in student), the first one will call grad_student::print
+	ps->print();//student::print
+	pgs->print();//gra_student::prints
+
 	return 0;
 }
