@@ -28,7 +28,7 @@ public:
 	//call the base case constructor
 	grad_student(char* nm, int id, double g, year x, support t, char *d, char *th): student(nm,id,g,x),s(t){
 		strcpy(dept,d);
-		strcpy(thsis,th);
+		strcpy(thesis,th);
 	}
 	void print() const;
 
@@ -37,10 +37,22 @@ protected:
 	char dept[10];
 	char thesis[80];
 
+};
+
+
+void student::print(){
+	cout<<name<<", "<< student_id<<", "<<y<<", "<<gpa<<endl;
 }
 
+//overriden method
+void grad_student::print(){
 
+}
 int main(){
-	student s("Bill",1518549,3.94,fresh);
+	char name[] = "Morris Phol";
+	char dept[] =  "Pharmacy";
+	char thesis[] = "Retail Pharmacies";
+	grad_student gs(name, 200, 3.2, student::grad, grad_student::ta, dept, thesis);
+	student& rs = gs; //alias
 	return 0;
 }
