@@ -45,6 +45,9 @@ int main(int argc, char *argv[]){
 	if((f1 = open(argv[1],O_RDONLY,0))==-1){
 		die("cp: can't open %s", argv[1]);
 	}
+	//See man 2 creat
+	// The creat() function is the same as:
+	//open(path, O_CREAT | O_TRUNC | O_WRONLY, mode);
 
 	if((f2 = creat(argv[2],PERMS))==-1){
 		//%o means signed octal, 3 means minimum number of characters to be printed
@@ -59,5 +62,6 @@ int main(int argc, char *argv[]){
 		}
 	}
 
+	close(f1);
 	return 0;
 }
