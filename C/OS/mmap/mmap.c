@@ -26,11 +26,13 @@ int main (int argc, char *argv[])
                 return 1;
         }
 
+        //Test the file status. see fstat for more detail
         if (fstat (fd, &sb) == -1) {
                 perror ("fstat");
                 return 1;
         }
 
+        //Test if the file is a regular file, see man fstat (search for REG)
         if (!S_ISREG (sb.st_mode)) {
                 fprintf (stderr, "%s is not a file\n", argv[1]);
                 return 1;
