@@ -1,3 +1,4 @@
+//Source:https://www.safaribooksonline.com/library/view/linux-system-programming/0596009585/ch04s03.html
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -56,8 +57,9 @@ int main (int argc, char *argv[])
         }
 
         for (len = 0; len < sb.st_size; len++)
-                putchar (p[len]);
+                putchar (p[len]);//output a character to a stream
 
+        //unmap
         if (munmap (p, sb.st_size) == -1) {
                 perror ("munmap");
                 return 1;
