@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 int main () {
+	
    int ret;
    char oldname[] = "file.txt";
    char newname[] = "newfile.txt";
