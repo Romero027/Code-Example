@@ -13,6 +13,7 @@ using namespace std;
 
 class Test
 {
+private:
 	int id; 
 	string name;
 
