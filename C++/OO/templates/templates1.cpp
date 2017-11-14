@@ -3,7 +3,7 @@ using namespace std;
  
 // One function works for all data types.  This would work
 // even for user defined types if operator '>' is overloaded
-template <typename T>
+template <class T>
 T myMax(T x, T y)
 {
    return (x > y)? x: y;
