@@ -9,6 +9,6 @@ private:
 public:
 	Complex();
 	Complex(double a, double b);
-}
+};
 
 #endif 
