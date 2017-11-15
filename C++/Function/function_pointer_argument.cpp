@@ -14,7 +14,7 @@ int countStrings(vector<string> &texts, bool (*match)(string) ) {
 	for(auto i : texts){
 		if(match(i))
 			count++;
-	}
+	}		
 	return count;
 }
 
@@ -33,6 +33,6 @@ int main() {
 	cout << count_if(texts.begin(), texts.end(), match) << endl;
 
 	cout << countStrings(texts, match) << endl;
-
-	return 0;
+	
+	return 0;		
 }
