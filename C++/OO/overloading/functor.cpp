@@ -1,4 +1,5 @@
-
+//A program illustrate how to use functor
+//A functor is pretty much just a class which defines the operator().
 #include <iostream>
 
 using namespace std;
@@ -10,6 +11,7 @@ struct Test
 
 struct MatchTest : Test 
 {
+	//Actually we don't need virtual keyword here
 	virtual bool operator()(string &text){
 		return text == "lion";
 	}
