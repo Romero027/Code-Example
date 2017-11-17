@@ -8,6 +8,9 @@ int main() {
     int two = 2;
     int three = 3;
     
+    //This is wrong: variable 'one' cannot be implicitly captured in a lambda with no capture-default specified
+    //[](){ cout << one << ", " << two << endl; }();
+
     // Capture one and two by value
     [one, two](){ cout << one << ", " << two << endl; }();
     

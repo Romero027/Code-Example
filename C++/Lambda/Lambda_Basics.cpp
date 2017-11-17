@@ -13,6 +13,8 @@ int main() {
 	//{   
    	//		definition of method   
 	//} 
+	[](){cout << "Hello" << endl;}();//You can call lambda expression directly(However, this is kinda useless)
+
 	auto func = [](int i)
 	{
 		cout << "Hello: "<< i  << endl;
