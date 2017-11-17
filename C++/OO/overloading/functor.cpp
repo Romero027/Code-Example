@@ -6,20 +6,21 @@ using namespace std;
 
 struct Test
 {
-	virtual bool operator()(string &text) = 0;
+	virtual bool operator()(string &text) const = 0;
 };
 
 struct MatchTest : Test 
 {
 	//Actually we don't need virtual keyword here
-	virtual bool operator()(string &text){
+	//NOTE: that we should have the exactly same prototype here
+	virtual bool operator()(string &text) const{
 		return text == "lion";
 	}
 };
 
 struct MyMatchTest : Test
 {
-	virtual bool operator()(string &text) {
+	virtual bool operator()(string &text) const{
 		return text == "text";
 	}
 };
