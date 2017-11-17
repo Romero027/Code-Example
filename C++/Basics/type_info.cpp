@@ -20,7 +20,7 @@ int main() {
 
 
 
-   	decltype(value) name = "Bob";
+   	decltype(value) name = "Bob"; //decltype(value) is euqvalent to string
 
    	cout<< typeid(value).name()<<endl;
 
