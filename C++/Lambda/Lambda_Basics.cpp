@@ -1,24 +1,27 @@
-
+//http://www.geeksforgeeks.org/lambda-expression-in-c/
 #include <iostream>
 
 using namespace std;
 
-void test(void (*pFunc)()) 
+void test(void (*pFunc)(int)) 
 {
-	pFunc();
+	pFunc(1);
 }
 
 int main() {
-
-	auto func = []()
+	//[ capture clause ] (parameters) -> return-type  
+	//{   
+   	//		definition of method   
+	//} 
+	auto func = [](int i)
 	{
-		cout << "Hello" << endl;
+		cout << "Hello: "<< i  << endl;
 	};
 
-	func();
+	func(1);
 
 	test(func);
 
-	test([]() {cout << "Hello again" << endl; });
+	test([](int i) {cout << "Hello again: "<< i << endl; });
 	return 0;
 }
