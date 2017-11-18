@@ -12,6 +12,9 @@ public:
 		int three { 3 };
 		int four { 4 };
 
+
+		//Capture all local variable by reference an capture this by reference
+		//[=, this] is wrong : 'this' cannot be explicitly captured when the capture default is '='
 		auto pLambda = [&, this]() {
 			one = 111;
 			cout << one << endl;
