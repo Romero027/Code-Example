@@ -12,7 +12,17 @@ private:
 public:
 	Test() {
 		cout << "constructor" << endl;
-		_pBuffer = new int[SIZE] { };
+		//This initialzie all the element of array to 0
+		//Method 1
+		_pBuffer = new int[SIZE]{};
+
+		//Method2 
+		// _pBuffer = new int[SIZE];
+		// memset(_pBuffer,0,SIZE);
+
+		//Method 3
+		//_pBuffer = new int[SIZE]());
+		//cout<<_pBuffer[0]<<endl;
 	}
 
 	Test(int i) {
