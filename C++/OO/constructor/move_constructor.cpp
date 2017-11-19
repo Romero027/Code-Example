@@ -7,14 +7,17 @@ using namespace std;
 class Test {
 private:
 	static const int SIZE = 100;
-	int *_pBuffer{nullptr};
+
+	int *_pBuffer { nullptr };
 
 public:
 	Test() {
+		cout << "Constructor" << endl;
 		_pBuffer = new int[SIZE] { };
 	}
 
 	Test(int i) {
+		cout << "Paramtrized Constructor" << endl;
 		_pBuffer = new int[SIZE] { };
 
 		for (int i = 0; i < SIZE; i++) {
@@ -22,27 +25,43 @@ public:
 		}
 	}
 
+
 	Test(const Test &other) {
+		cout << "Copy constructor" << endl;
 		_pBuffer = new int[SIZE] { };
 
 		memcpy(_pBuffer, other._pBuffer, SIZE * sizeof(int));
 	}
 
-	//This is move constructor
 	Test(Test &&other) {
 		cout << "Move constructor" << endl;
 		_pBuffer = other._pBuffer;
 		other._pBuffer = nullptr;
 	}
 
+
 	Test &operator=(const Test &other) {
+		cout << "assignmnet operator" << endl;
 		_pBuffer = new int[SIZE] { };
 
 		memcpy(_pBuffer, other._pBuffer, SIZE * sizeof(int));
 		return *this;
 	}
 
+	//Move assignmnet operator
+	Test &operator=(Test &&other) {
+
+		cout << "Move assignment" << endl;
+
+		delete [] _pBuffer;
+		_pBuffer = other._pBuffer;
+		other._pBuffer = nullptr;
+
+		return *this;
+	}
+
 	~Test() {
+		cout << "Destructor" << endl;
 		delete[] _pBuffer;
 	}
 
@@ -58,11 +77,14 @@ Test getTest() {
 	return Test();
 }
 
-
 int main() {
-	
-	// vector<Test> vec;
-	// vec.push_back(Test());
+	Test test1;
+	vector<Test> vec;
+	vec.push_back(Test());
+
+	Test test;
+	test = getTest();
+	test = test1;
 
 	return 0;
 }
