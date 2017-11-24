@@ -24,7 +24,7 @@ int main() {
 
 	Parent *ppb = &brother;
 
-	
+	//static_cast is the first cast you should attempt to use.
 	Brother *pbb = static_cast<Brother *>(ppb);
 
 	cout << pbb << endl;
