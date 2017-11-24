@@ -22,7 +22,8 @@ int main() {
 	Brother brother;
 
 	Parent *ppb = &brother;
-	
+
+	//in this cast, static cast is unsafe
 	Brother *pbb = dynamic_cast<Brother *>(ppb);
 
 	if (pbb == nullptr) {
