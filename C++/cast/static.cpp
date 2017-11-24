@@ -28,6 +28,7 @@ int main() {
 	Parent *ppb = &brother;
 
 	//static_cast is the first cast you should attempt to use.
+	//When casting a pointer, if the cast fails, the cast returns NULL. This provides a quick method of determining if a given object of a particular dynamic type. 
 	Brother *pbb = static_cast<Brother *>(ppb);
 
 	cout << pbb << endl;
