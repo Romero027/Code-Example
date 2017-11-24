@@ -23,7 +23,7 @@ int main() {
 
 	Parent *ppb = &brother;
 
-	//in this cast, static cast is unsafe
+	//dynamic_cast is almost exclusively used for handling polymorphism.
 	Brother *pbb = dynamic_cast<Brother *>(ppb);
 
 	if (pbb == nullptr) {
