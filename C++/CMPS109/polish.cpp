@@ -1,6 +1,3 @@
-
-
-
 // OOP = ADT + inheritence + dynamic typing
 // See also Andrew Koenig JOOP  August 1988
 
@@ -9,7 +6,9 @@ using namespace std;
 
 
 int valtab[127] ; //used for integer values of variables
+
 class Tree;
+
 class Node {
 protected:
    Node(){ use = 1; }
