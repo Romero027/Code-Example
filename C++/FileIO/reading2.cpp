@@ -7,6 +7,7 @@ using namespace std;
 
 int main() {
 
+	
 	string inFileName = "text.txt";
 	//we can use ifstream or fstream
 	ifstream inFile;
