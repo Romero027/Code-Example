@@ -24,5 +24,9 @@ int main(){
 	int i3 = 37;
 	float f2 = *(float*)&i3;
 	cout<<f2<<endl;
+
+	float f3 = -1000.0;
+	short s4 = *(short*)&f3;
+	cout<<s4<<endl;
 	return 0;
 }
