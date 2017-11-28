@@ -1,1 +1,14 @@
 http://www.geeksforgeeks.org/understanding-exit-abort-and-assert/
+
+
+Assertions and error-checking
+
+It is important to distinguish between program errors and run- time errors:
+
+A program error is a bug, and should never occur.
+A run-time error can validly occur at any time during program execution.
+
+Assertions are not a mechanism for handling run-time errors. For example, an assertion violation caused by the user inadvertently entering a negative number when a positive number is expected is poor program design. Cases like this must be handled by appropriate error-checking and recovery code (such as requesting another input), not by assertions.
+
+Realistically, of course, programs of any reasonable size do have bugs, which appear at run-time. Exactly what conditions are to be checked by assertions and what by run-time error- checking code is a design issue. Assertions are very effective in reusable libraries, for example, since i) the library is small enough for it to be possible to guarantee bug-free operation, and ii) the library routines cannot perform error- handling because they do not know in what environment they will be used. At higher levels of a program, where operation is more complex, run-time error-checking must be designed into the code.
+
