@@ -1,4 +1,8 @@
 //Source:GeekforGeeks
+//exit perform normal program termination
+//see man 3 exit for more details
+
+
 
 /* exit example */
 #include <stdio.h>
