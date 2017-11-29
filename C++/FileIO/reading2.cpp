@@ -8,12 +8,12 @@
 using namespace std;
 
 void readfile(ifstream& infile, vector<string>& lines){
-	assert(infile.good());
+	assert(infile.good());//verify ifstream refers to legit file
 
 	string line;
 	while(infile.peek()!=EOF){
-		getline(infile,line);
-		lines.push_back(line);
+		getline(infile,line); //reassign line to be next line of file
+		lines.push_back(line); // append
 	}
 	cout<<"All done! (Number of lines: "<<lines.size()<<")"<<endl;
 }
