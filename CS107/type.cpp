@@ -25,7 +25,8 @@ int main(){
 	float f2 = *(float*)&i3;
 	cout<<f2<<endl;
 
-	float f3 = 7.0;
+	//set f3 = 32.213123 works
+	float f3 = 7.0;//note that this will print 0 because of linux is in little endian
 	short s4 = *(short*)&f3;
 	cout<<s4<<endl;
 
