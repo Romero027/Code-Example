@@ -6,5 +6,7 @@ int main(){
 	//char s[7];
 	char *s;
 	s = "Olympic";
+	//s[0]= 'A';//read-only
+
 	return 0;
 }
