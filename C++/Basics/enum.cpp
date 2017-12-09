@@ -7,7 +7,7 @@ enum Card { red_card, green_card, yellow_card };    // another plain enum
 enum class Animal { dog, deer, cat, bird, human };  // enum class
 enum class Mammal { kangaroo, deer, human };        // another enum class
 
-void fun() {
+int main() {
 
     // examples of bad use of plain enums:
     Color color = Color::red;
@@ -32,4 +32,6 @@ void fun() {
     if (a == Mammal::deer) // error (good)
         cout << "bad" << endl;
 
-}
+    return 0;
+
+}   
